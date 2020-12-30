@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg_seven"
+    tools:context=".MainActivity">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="15dp"
+        android:background="@android:color/transparent"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/first_menu"
+                    android:layout_width="145dp"
+                    android:layout_height="160dp">
+
+                    <!--app:cardCornerRadius="20dp"-->
+
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/predict1" />
+
+                    <TextView
+                        android:id="@+id/predict"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:text="Plant Suggestion"
+                        android:textAlignment="center"
+                        android:textColor="#d1b665"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/fifth_menu"
+                    android:layout_width="145dp"
+                    android:layout_height="160dp">
+
+                    <!--app:cardCornerRadius="20dp"-->
+
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/maintain2" />
+
+                    <TextView
+                        android:id="@+id/maintenance"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="40dp"
+                        android:text="Track Plant"
+                        android:textAlignment="center"
+                        android:textColor="#d1b665"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_height="160dp"
+                    android:layout_width="145dp"
+                    android:id="@+id/third_menu"
+                    android:layout_below="@id/first_menu">
+
+                    <!--app:cardCornerRadius="20dp"-->
+
+
+                    <ImageView android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:src="@drawable/cart"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/buy"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#d1b665"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="Buy Seeds"/>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_height="160dp"
+                    android:layout_width="145dp"
+                    android:id="@+id/forth_menu"
+                    android:layout_below="@id/second_menu"
+                    android:layout_toRightOf="@id/first_menu">
+
+                    <!--app:cardCornerRadius="20dp"-->
+
+
+                    <ImageView
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:src="@drawable/donate2"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_toRightOf="@id/first_menu"/>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/donation"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#d1b665"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="Donate a Plant"/>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+                <androidx.cardview.widget.CardView
+
+                    android:layout_height="160dp"
+                    android:layout_width="145dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/second_menu"
+                    android:layout_toRightOf="@id/first_menu">
+
+                    <!--app:cardCornerRadius="20dp"-->
+
+
+                    <ImageView
+                        android:layout_height="70dp"
+                        android:layout_width="70dp"
+                        android:src="@drawable/gardener"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_toRightOf="@id/first_menu"/>
+
+                    <TextView android:layout_height="wrap_content"
+                        android:layout_width="110dp"
+                        android:layout_marginTop="40dp"
+                        android:id="@+id/gardener"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#d1b665"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:text="Find a Gardener"/>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

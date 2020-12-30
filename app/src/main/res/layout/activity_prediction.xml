@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_seven"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".PredictionActivity">
+
+        <!--    <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:src="@drawable/ic_baseline_home_24"
+                android:background="@android:color/transparent"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/pred_home"
+                />-->
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parameters required for suggestion of plant"
+            android:layout_marginHorizontal="30dp"
+            android:padding="12dp"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="60dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="-40dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:padding="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="left"
+                android:background="@drawable/whiteround"
+                >
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_color_btn"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="Air Quality Index"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:paddingLeft="10dp"
+                    android:padding="3dp"/>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/aqmeter"
+                    android:layout_marginTop="-40dp"
+                    android:layout_gravity="center"
+                    />
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aqText"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:hint="Air Quality value"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="left"
+                android:background="@drawable/whiteround"
+                >
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/temperature"
+                    android:layout_marginTop="-40dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_color_btn"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Temperature"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:paddingLeft="10dp"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tempText"
+                    android:hint="Temperature value"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:padding="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="left"
+                android:background="@drawable/whiteround"
+                >
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/humidity"
+                    android:layout_marginTop="-40dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_color_btn"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Humidity"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp"
+                    android:paddingLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/humidityText"
+                    android:hint="Humidity value"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="left"
+                android:background="@drawable/whiteround"
+                >
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/pm2"
+                    android:layout_marginTop="-40dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_color_btn"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Particulate Matter 2-5"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:paddingLeft="10dp"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:id="@+id/pmText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"/>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="150dp"
+                android:padding="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/whiteround"
+                >
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/soilmoisture"
+                    android:layout_marginTop="-40dp"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_color_btn"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Soil Moisture"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="5dp"
+                    android:textSize="10sp"
+                    android:paddingLeft="10dp"
+                    android:padding="3dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/humidityText2"
+                    android:hint="Soil Moisture value"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    />
+
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:background="@drawable/simple_radius"
+            android:padding="5dp"
+            android:layout_margin="30dp"
+            android:text="Check suggested plants"
+            android:textColor="@android:color/white"
+            android:id="@+id/resultbtn"
+            />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btmnav"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom"
+            app:itemBackground="@android:color/white"
+            app:itemIconTint="@color/brown"
+            android:layout_marginTop="-35dp"
+            app:itemTextColor="@color/brown"
+            app:menu="@menu/menu_navigation" />
+
+    </LinearLayout>
+</ScrollView>

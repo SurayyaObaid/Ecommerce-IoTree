@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DonationActivity">
+
+    <TextView
+        android:layout_width="420dp"
+        android:layout_height="40dp"
+        android:background="#228b22"
+        android:text="Donate Plants"
+        android:textColor="#FFFFFF"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:layout_height="35dp"
+        android:layout_width="290dp"
+        android:id="@+id/text"
+        android:background="@drawable/border"
+        android:layout_gravity="center"
+        android:hint="Full name"
+        android:textSize="15dp"
+        android:inputType="textPersonName"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CNIC"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_height="35dp"
+        android:layout_width="290dp"
+        android:id="@+id/text1"
+        android:background="@drawable/border"
+        android:layout_gravity="center"
+        android:hint="Your CNIC"
+        android:textSize="15dp"
+        android:inputType="numberSigned"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Card"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"/>
+    <EditText
+        android:layout_height="35dp"
+        android:layout_width="290dp"
+        android:id="@+id/text2"
+        android:background="@drawable/border"
+        android:layout_gravity="center"
+        android:hint="Your Credit/Debit Card no"
+        android:textSize="15dp"
+        android:inputType="numberPassword"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Payment Mode"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="10dp"/>
+
+
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:background="@drawable/border"
+        android:textSize="15dp"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Number of Trees (10 Trees - 1000 PKR)"
+        android:layout_marginLeft="1.5dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/tv" />
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/tv"
+        android:background="@drawable/border"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        />
+
+
+
+
+    <Button
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:text="Donate"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_color_btn"
+        android:layout_marginTop="10dp"
+        android:id="@+id/donate"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmnav"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/brown"
+        app:itemTextColor="@color/brown"
+        android:layout_marginTop="230dp"
+        app:menu="@menu/menu_navigation" />
+</LinearLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".GardenerActivity">
+    <EditText
+        android:id="@+id/EditTextName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Location"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textColorHighlight="#000000"
+        android:backgroundTint="@color/colorPrimary"
+        />
+    <TextView
+        android:id="@+id/gardenertv1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Services"
+        android:textSize="15dp"
+        android:layout_below="@id/EditTextName"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#000000"
+        />
+
+    <CheckBox
+        android:id="@+id/garden_clearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/gardenertv1"
+        android:text="Garden Clearance"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="50dp"/>
+    <CheckBox
+        android:id="@+id/garden_design"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/garden_clearance"
+        android:text="Garden Design"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="50dp"/>
+    <CheckBox
+        android:id="@+id/jet_washing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/garden_design"
+        android:text="Jet Washing"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="50dp"/>
+    <CheckBox
+        android:id="@+id/overgrowth_prevention"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/jet_washing"
+        android:text="Overgrowth Prevention"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="50dp"/>
+    <CheckBox
+        android:id="@+id/lawn_mowing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/overgrowth_prevention"
+        android:text="Lawn mowing"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="50dp"/>
+    <CheckBox
+        android:id="@+id/hedge_trimming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_below="@id/lawn_mowing"
+        android:text="Hedge Trimming"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="50dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hedge_trimming"
+        android:layout_marginTop="5dp"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="Total estimated service charges: "
+        android:id="@+id/service_charges"
+        android:textColor="#000000"/>
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Request Now"
+        android:textColor="#ffffff"
+        android:background="@drawable/bg_color_btn"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/submit_button"
+        />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmnav"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/brown"
+        app:itemTextColor="@color/brown"
+        android:layout_marginTop="210dp"
+        app:menu="@menu/menu_navigation" />
+</LinearLayout>

@@ -1,0 +1,349 @@
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:paddingBottom="100dp"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/bg_seven"
+        >
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parameters required for maintenance of plant"
+                android:layout_marginHorizontal="30dp"
+                android:padding="12dp"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="20dp"
+                android:layout_marginTop="50dp">
+                <!--<TextView
+                    android:layout_width="140dp"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_gravity="left"
+                    android:gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Your Location:"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_gravity="left"
+                    android:gravity="left"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="-37dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@android:color/black"
+                    android:id="@+id/city"
+                    />-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="150dp"
+                        android:padding="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/transparent_round"
+                        >
+                        <TextView
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/simple_radius"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Water Needs"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp"
+                            android:paddingLeft="10dp"
+                            android:padding="3dp"/>
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/water"
+                            android:layout_marginTop="-40dp"
+                            android:layout_gravity="center"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:padding="2dp"
+                            android:textSize="13sp"
+                            android:paddingLeft="10dp"
+                            android:text="80% fulfilled"/>
+
+
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="150dp"
+                        android:padding="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/transparent_round"
+                        >
+                        <TextView
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/simple_radius"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Sunlight Needs"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp"
+                            android:paddingLeft="10dp"
+                            android:padding="3dp"/>
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/sunlight"
+                            android:layout_marginTop="-40dp"
+                            android:layout_gravity="center"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:padding="2dp"
+                            android:textSize="13sp"
+                            android:paddingLeft="10dp"
+                            android:text="70% fulfilled"/>
+
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="150dp"
+                        android:padding="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/transparent_round"
+                        >
+                        <TextView
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/simple_radius"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Fertilizer Needs"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp"
+                            android:paddingLeft="10dp"
+                            android:padding="3dp"/>
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/fertilizer"
+                            android:layout_marginTop="-40dp"
+                            android:layout_gravity="center"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:padding="2dp"
+                            android:textSize="13sp"
+                            android:paddingLeft="10dp"
+                            android:text="90% fulfilled"/>
+
+
+
+                    </androidx.cardview.widget.CardView>
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="150dp"
+                        android:padding="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="left"
+                        android:background="@drawable/transparent_round"
+                        >
+                        <TextView
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/simple_radius"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="5dp"
+                            android:text="Soil Quality Maintenance"
+                            android:textColor="@android:color/white"
+                            android:textSize="10sp"
+                            android:paddingLeft="10dp"
+                            android:padding="3dp"/>
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/soilq"
+                            android:layout_marginTop="-40dp"
+                            android:layout_gravity="center"
+                            />
+
+
+
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="30dp"
+                            android:gravity="center"
+                            android:textColor="@android:color/black"
+                            android:padding="2dp"
+                            android:textSize="13sp"
+                            android:paddingLeft="10dp"
+                            android:text="50% fulfilled"/>
+
+
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="160dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="105dp"
+                        android:padding="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/transparent_round"
+                        >
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/pesticide"
+                            android:layout_marginTop="-40dp"
+                            android:layout_gravity="center"
+                            />
+
+                        <TextView
+                            android:layout_width="130dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/simple_radius"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Pest Protection"
+                            android:textColor="@android:color/white"
+                            android:layout_marginTop="5dp"
+                            android:textSize="10sp"
+                            android:paddingLeft="10dp"
+                            android:padding="3dp"/>
+
+                        <TextView
+                            android:id="@+id/airquality"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginTop="90dp"
+                            android:layout_marginLeft="20dp"
+                            android:gravity="left"
+                            android:textColor="@android:color/black"
+                            android:padding="2dp"
+                            android:textSize="13sp"
+                            android:paddingLeft="10dp"
+                            android:text="100% fine"/>
+
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:background="@drawable/bg_color_btn"
+                android:padding="5dp"
+                android:layout_margin="30dp"
+                android:text="Get Your favorite plant"
+                android:textColor="@android:color/white"
+                android:id="@+id/buySeed"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmnav"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/brown"
+        app:itemTextColor="@color/brown"
+        android:layout_marginTop="-60dp"
+        app:menu="@menu/menu_navigation" />
+</LinearLayout>
