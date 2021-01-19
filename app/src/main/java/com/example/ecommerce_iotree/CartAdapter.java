@@ -18,6 +18,7 @@ import java.util.List;
 import static com.example.ecommerce_iotree.JSONPlaceHolderApi.BASE_URL;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
+    String img, p, q;
     private Context context;
     private List<CartModel> cartModels;
 
@@ -39,11 +40,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         CartModel cartModel = cartModels.get(position);
         holder.itemName.setText(cartModel.getItem_name());
         holder.itemQuantity.setText(cartModel.getItem_quantity());
-        holder.itemPrice.setText(cartModel.getItem_quantity());
+        holder.itemPrice.setText(cartModel.getItem_price());
+        img = cartModel.getImage();
+        p = cartModel.getItem_price();
+        q = cartModel.getItem_quantity();
         Glide.with(context)
                 .load(cartModels.get(position).getImage())
                 .into(holder.imageView);
-        Log.d("img-url", BASE_URL+cartModel.getImage());
+        Log.d("trouble", img + " \n" + p + "\n" +q);
     }
 
     @Override

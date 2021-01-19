@@ -27,8 +27,8 @@ public class CartModel {
     private String Item_quantity;
 
     @Expose
-    @SerializedName("Item_price")
-    private String Item_price;
+    @SerializedName("item_price")
+    private String item_price;
 
     @Expose
     @SerializedName("image")
@@ -75,11 +75,11 @@ public class CartModel {
     }
 
     public String getItem_price() {
-        return Item_price;
+        return item_price;
     }
 
     public void setItem_price(String item_price) {
-        Item_price = item_price;
+        item_price = item_price;
     }
 
     public String getImage() {

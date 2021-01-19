@@ -327,9 +327,9 @@
                 android:background="@drawable/bg_color_btn"
                 android:padding="5dp"
                 android:layout_margin="30dp"
-                android:text="Get Your favorite plant"
+                android:text="Set your Maintenance Goals"
                 android:textColor="@android:color/white"
-                android:id="@+id/buySeed"
+                android:id="@+id/goals"
                 />
 
         </LinearLayout>

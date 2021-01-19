@@ -39,7 +39,7 @@ public class CartActivity extends AppCompatActivity {
         //String plant_id = desc.getString("Plant_ID");
         //String user_id = desc.getString("User_ID");
         //idTV.append("Plant ID: "+plant_id+ "\n User ID: "+user_id);
-        final String uid= MainActivity.sessionUser;
+        //final String uid= MainActivity.sessionUser;
         //uidTV.append(uid);
 
         recyclerView = findViewById(R.id.cartRV);
@@ -85,6 +85,7 @@ public class CartActivity extends AppCompatActivity {
                     recyclerView.setAdapter(new CartAdapter(CartActivity.this, cartModels));
                     //Log.d("content", content);
                     //Log.d("img-url", BASE_URL+cartModel.getImage());
+
                 }
 
 

@@ -14,8 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-
-
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHolder> {
 
     private Context ctx;
@@ -42,6 +40,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
         holder.lnametxt.setText(plantList.get(position).getLocalName());
         holder.bnametxt.setText(plantList.get(position).getBotanicalName());
         holder.pricetxt.setText(plantList.get(position).getPricePKR());
+
 
         Glide.with(ctx)
                 .load(plantList.get(position).getImage())

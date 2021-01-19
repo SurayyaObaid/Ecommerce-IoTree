@@ -30,6 +30,7 @@ public class PredictionActivity extends AppCompatActivity {
     TextView aqTextValue, pmTextValue, tempTextValue, humidityTextValue;
     ImageButton pred_home;
     Button resultbtn;
+    String temperatureValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,10 @@ public class PredictionActivity extends AppCompatActivity {
         resultbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(PredictionActivity.this,StoreActivity.class);
+                Intent in = new Intent(PredictionActivity.this,PredictionResults.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("Temperature",temperatureValue);
+                in.putExtras(bundle);
                 startActivity(in);
             }
         });
@@ -125,6 +129,7 @@ public class PredictionActivity extends AppCompatActivity {
 
                     temp = temp_obj.getString("v");
                     tempTextValue.setText(temp);
+                    temperatureValue = temp;
 
                     humidity = h_obj.getString("v");
                     humidityTextValue.setText(humidity);

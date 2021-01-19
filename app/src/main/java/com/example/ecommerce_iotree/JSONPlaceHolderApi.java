@@ -22,4 +22,7 @@ public interface JSONPlaceHolderApi {
     @GET("fetchcart.php")
     Call<List<CartModel>> getCart(@Query("User_ID") String User_ID );
 
+    @GET("plantprediction.php")
+    Call<List<Plant>> loadPrediction(@Query("Temperature") String Temperature );
+
 }

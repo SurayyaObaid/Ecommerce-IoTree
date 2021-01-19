@@ -12,6 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PredictionAdapter"></activity>
+        <activity android:name=".PredictionResults" />
+        <activity android:name=".Maintenance.PestGoals" />
+        <activity android:name=".Maintenance.WaterGoals" />
+        <activity android:name=".SetGoalsActivity" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".Order" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,13 +29,12 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".OrderActivity" />
         <activity android:name=".CartActivity" />
-        <activity android:name=".ProductDescriptionActivity"></activity>
-        <activity android:name=".StoreActivity">
-        </activity>
+        <activity android:name=".ProductDescriptionActivity" />
+        <activity android:name=".StoreActivity" />
         <activity android:name=".DonationActivity" />
         <activity android:name=".GardenerActivity" />
         <activity android:name=".MaintenanceActivity" />
-        <activity android:name=".PredictionActivity"></activity>
+        <activity android:name=".PredictionActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".Registration" />
         <activity android:name=".DisplayPlant" />

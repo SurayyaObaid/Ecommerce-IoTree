@@ -6,13 +6,24 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity {
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        imageButton = findViewById(R.id.logoutbtn);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.sessionUser = null;
+                Intent in = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(in);
+            }
+        });
         CardView prediction= findViewById(R.id.first_menu);
         prediction.setOnClickListener(new View.OnClickListener() {
             @Override

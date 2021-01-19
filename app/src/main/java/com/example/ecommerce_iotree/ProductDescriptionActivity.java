@@ -67,7 +67,7 @@ public class ProductDescriptionActivity extends AppCompatActivity {
                 String userID= MainActivity.sessionUser;
                 bundle.putString("User_ID", userID);
                 insertProductIntoCart();
-                Intent in = new Intent(ProductDescriptionActivity.this, CartActivity.class);
+                Intent in = new Intent(ProductDescriptionActivity.this, TestActivity.class);
                 in.putExtras(bundle);
                 startActivity(in);
             }
@@ -167,7 +167,9 @@ public class ProductDescriptionActivity extends AppCompatActivity {
                     content += "Spread in meters:\t" + plant.getSpread_in_metres() + "\n";
                     content += "Known Hazards:\t" + plant.getKnown_hazards() + "\n";
                     content += "Habitat:\t" + plant.getHabitat() + "\n";
-                    content += "Soil:\t" + plant.getSoil() + "\n";
+                    content += "Soil:\t" + plant.getSoil() + "\n" ;
+                    MainActivity user = new MainActivity();
+                    content +="user id: " + user.sessionUser;
                     content += "Maximum Temperature:\t" + plant.getTemperature() + "\n";
                     textView.append(content);
                     protitle.append(protitletext);
@@ -184,13 +186,6 @@ public class ProductDescriptionActivity extends AppCompatActivity {
                 textView.setText("Failed to get response");
             }
         });
-
-
-
-
-
-
-
 
     }
 }

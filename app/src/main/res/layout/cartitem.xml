@@ -91,17 +91,17 @@
                     android:layout_gravity="center"
                     />
             </LinearLayout>
+
             <Button
+                android:id="@+id/buybtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add to Cart"
-                android:gravity="center"
                 android:layout_gravity="center"
                 android:background="@drawable/simple_radius"
-                android:textColor="@android:color/white"
+                android:gravity="center"
                 android:paddingHorizontal="30dp"
-                android:id="@+id/buybtn"
-                />
+                android:text="Proceed To Pay"
+                android:textColor="@android:color/white" />
         </LinearLayout>
     </LinearLayout>
 
