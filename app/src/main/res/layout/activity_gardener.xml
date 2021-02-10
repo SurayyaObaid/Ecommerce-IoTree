@@ -7,15 +7,17 @@
     android:orientation="vertical"
     android:paddingTop="20dp"
     tools:context=".GardenerActivity">
-    <EditText
-        android:id="@+id/EditTextName"
+    <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:hint="Location"
+        android:text="Request Gardener Services"
         android:gravity="center"
         android:layout_marginTop="10dp"
         android:textColorHighlight="#000000"
         android:backgroundTint="@color/colorPrimary"
+        android:id="@+id/EditTextName"
+        android:textStyle="bold|italic"
+        android:textSize="20sp"
         />
     <TextView
         android:id="@+id/gardenertv1"
@@ -103,7 +105,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:layout_centerInParent="true"
-        android:id="@+id/submit_button"
+        android:id="@+id/requestGardener"
         />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmnav"

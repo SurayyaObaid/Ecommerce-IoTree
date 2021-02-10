@@ -7,20 +7,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class HomeActivity extends AppCompatActivity {
-    ImageButton imageButton;
+    ImageButton imageButton, profileButton;
+    TextView userName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         imageButton = findViewById(R.id.logoutbtn);
+        userName = findViewById(R.id.userName);
+        Intent in= getIntent();
+        Bundle username = getIntent().getExtras();
+        String usernameString = username.getString("UserName");
+        userName.setText("Welcome Back "+usernameString + "!");
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.sessionUser = null;
                 Intent in = new Intent(HomeActivity.this, MainActivity.class);
+                startActivity(in);
+            }
+        });
+        profileButton = findViewById(R.id.profile);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.sessionUser = null;
+                Intent in = new Intent(HomeActivity.this, UserProfileActivity.class);
                 startActivity(in);
             }
         });

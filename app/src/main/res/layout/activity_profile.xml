@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_seven"
     tools:context=".ProfileActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="USER PROFILE"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:textColor="@android:color/black"
+        android:layout_margin="20dp"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/uName"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/uId"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your Activites"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Your Orders"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to view your orders"
+            android:background="@drawable/bg_color_btn"
+            android:textColor="@android:color/white"
+            android:padding="15dp"
+            android:id="@+id/chkorder"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Your donations"
+            android:textSize="15sp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Click to view your donations"
+            android:background="@drawable/bg_color_btn"
+            android:textColor="@android:color/white"
+            android:padding="15dp"
+            android:id="@+id/chkdon"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Your Gardener Requests"
+            android:layout_gravity="center"
+            android:textSize="15sp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_margin="10dp"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click to view your orders"
+            android:background="@drawable/bg_color_btn"
+            android:textColor="@android:color/white"
+            android:padding="15dp"
+            android:layout_gravity="center"
+            android:id="@+id/chkgreqs"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

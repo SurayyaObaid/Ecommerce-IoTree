@@ -40,13 +40,26 @@
                 android:textStyle="bold"
                 android:id="@+id/iName"
                 />
+             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Product ID"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:hint="Product ID"
-                android:id="@+id/bname"
+                android:id="@+id/iid"
                 />
+             </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +106,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/buybtn"
+                android:id="@+id/proceedtopay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

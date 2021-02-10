@@ -1,14 +1,18 @@
 package com.example.ecommerce_iotree;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class StoreActivity extends AppCompatActivity {
 
@@ -16,10 +20,38 @@ public class StoreActivity extends AppCompatActivity {
     TextView title1,title2,title3,title4,title5,title6,title7,title8,price1,price2,price3,price4,price5,price6,price7,price8;
     ImageView image1,image2,image3,image4,image5,image6,image7,image8;
     ImageButton cartbtn, topaybtn, profilebtn;
+    BottomNavigationView btmnav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
+        btmnav= findViewById(R.id.btmnav);
+        btmnav.setSelectedItemId(R.id.shop);
+        btmnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.predict:
+                        startActivity(new Intent(getApplicationContext(),PredictionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.gardener:
+                        startActivity(new Intent(getApplicationContext(),GardenerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.shop:
+                        startActivity(new Intent(getApplicationContext(),StoreActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.donationActivity:
+                        startActivity(new Intent(getApplicationContext(),DonationActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
         cartbtn = findViewById(R.id.cartbtn);
         topaybtn = findViewById(R.id.toPayButton);
         profilebtn = findViewById(R.id.profilebtn);

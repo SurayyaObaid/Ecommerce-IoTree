@@ -31,11 +31,31 @@ public class PredictionActivity extends AppCompatActivity {
     ImageButton pred_home;
     Button resultbtn;
     String temperatureValue;
+    ImageButton imageButton, profileButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prediction);
+        imageButton = findViewById(R.id.logoutbtn);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.sessionUser = null;
+                Intent in = new Intent(PredictionActivity.this, MainActivity.class);
+                startActivity(in);
+            }
+        });
+        profileButton = findViewById(R.id.profile);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.sessionUser = null;
+                Intent in = new Intent(PredictionActivity.this, UserProfileActivity.class);
+                startActivity(in);
+            }
+        });
         aqTextValue = findViewById(R.id.aqText);
         pmTextValue = findViewById(R.id.pmText);
         tempTextValue = findViewById(R.id.tempText);

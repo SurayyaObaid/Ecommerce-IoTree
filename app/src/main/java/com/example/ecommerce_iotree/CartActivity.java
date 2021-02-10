@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.util.List;
+import java.util.logging.Level;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,12 +45,8 @@ public class CartActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.cartRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        insertintoCart();
+       // insertintoCart();
         getCart();
-    }
-
-    private void insertintoCart() {
-
     }
 
     private void getCart() {
@@ -76,6 +73,7 @@ public class CartActivity extends AppCompatActivity {
                     String content = "";
                     content += "Item ID:\t" + cartModel.getItem_ID() + "\n";
                     content += "User ID:\t" + cartModel.getUser_ID() + "\n";
+                    String plantID = cartModel.getPlant_ID();
                     content += "Plant ID:\t" + cartModel.getPlant_ID() + "\n";
                     content += "Item Name:\t" + cartModel.getItem_name() + "\n";
                     content += "Item Quantity: \t" + cartModel.getItem_quantity() + "\n";
@@ -85,6 +83,7 @@ public class CartActivity extends AppCompatActivity {
                     recyclerView.setAdapter(new CartAdapter(CartActivity.this, cartModels));
                     //Log.d("content", content);
                     //Log.d("img-url", BASE_URL+cartModel.getImage());
+
 
                 }
 

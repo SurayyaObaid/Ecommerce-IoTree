@@ -1,8 +1,11 @@
-<LinearLayout android:layout_height="wrap_content"
+<RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="685dp"
+        android:orientation="vertical">
     <ScrollView
         android:layout_height="wrap_content"
         android:paddingBottom="100dp"
@@ -17,6 +20,35 @@
             android:background="@android:color/transparent"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_person_24"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/profile"
+                    android:background="@android:color/transparent"
+                    />
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/logoutbrown"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/logoutbtn"
+                    android:background="@android:color/transparent"
+                    />
+            </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,7 +60,6 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/black"
-                android:layout_marginBottom="20dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 />
@@ -335,7 +366,7 @@
         </LinearLayout>
     </ScrollView>
 
-
+    </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmnav"
         android:layout_width="match_parent"
@@ -345,5 +376,6 @@
         app:itemIconTint="@color/brown"
         app:itemTextColor="@color/brown"
         android:layout_marginTop="-60dp"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/menu_navigation" />
-</LinearLayout>
+</RelativeLayout>

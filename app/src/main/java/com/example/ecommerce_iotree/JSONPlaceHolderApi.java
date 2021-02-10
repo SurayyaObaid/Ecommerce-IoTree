@@ -22,7 +22,13 @@ public interface JSONPlaceHolderApi {
     @GET("fetchcart.php")
     Call<List<CartModel>> getCart(@Query("User_ID") String User_ID );
 
+    @GET("fetchcart.php")
+    Call<List<CartItemModel>> getUserCart(@Query("User_ID") String User_ID );
+
     @GET("plantprediction.php")
     Call<List<Plant>> loadPrediction(@Query("Temperature") String Temperature );
+
+    @GET("fetchGardener.php")
+    Call<List<GardenerModel>> getGardener(@Query("gardenerService") String gardenerService );
 
 }

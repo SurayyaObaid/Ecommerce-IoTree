@@ -1,38 +1,37 @@
 package com.example.ecommerce_iotree;
 
-import android.util.Log;
+import android.content.Intent;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CartModel {
-    @Expose
-    @SerializedName("Item_ID")
-    public String Item_ID;
+public class CartItemModel {@Expose
+@SerializedName("Item_ID")
+private String Item_ID;
 
     @Expose
     @SerializedName("Plant_ID")
-    public String Plant_ID;
+    private String Plant_ID;
 
     @Expose
     @SerializedName("User_ID")
-    public String User_ID;
+    private String User_ID;
 
     @Expose
     @SerializedName("Item_name")
-    public String Item_name;
+    private String Item_name;
 
     @Expose
     @SerializedName("Item_quantity")
-    public String Item_quantity;
+    private String Item_quantity;
 
     @Expose
     @SerializedName("item_price")
-    public String item_price;
+    private Integer item_price;
 
     @Expose
     @SerializedName("image")
-    public String image;
+    private String image;
 
     public String getItem_ID() {
         return Item_ID;
@@ -74,13 +73,17 @@ public class CartModel {
         Item_quantity = item_quantity;
     }
 
-    public String getItem_price() {        return item_price;    }
+    public Integer getItem_price() {
+        return item_price;
+    }
 
-    public void setItem_price(String item_price) {
+    public void setItem_price(Integer item_price) {
         this.item_price = item_price;
     }
 
-    public String getImage() {        return image;    }
+    public String getImage() {
+        return image;
+    }
 
     public void setImage(String image) {
         this.image = image;

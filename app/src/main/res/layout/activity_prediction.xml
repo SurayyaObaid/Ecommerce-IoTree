@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="685dp"
+        >
 <ScrollView xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
@@ -11,6 +19,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".PredictionActivity">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_person_24"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/profile"
+                android:background="@android:color/transparent"
+                />
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/logoutbrown"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/logoutbtn"
+                android:background="@android:color/transparent"
+                />
+        </LinearLayout>
 
         <!--    <ImageButton
                 android:layout_width="40dp"
@@ -287,18 +323,23 @@
             android:text="Check suggested plants"
             android:textColor="@android:color/white"
             android:id="@+id/resultbtn"
+            android:layout_marginBottom="10dp"
             />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/btmnav"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_gravity="bottom"
-            app:itemBackground="@android:color/white"
-            app:itemIconTint="@color/brown"
-            android:layout_marginTop="-35dp"
-            app:itemTextColor="@color/brown"
-            app:menu="@menu/menu_navigation" />
 
     </LinearLayout>
 </ScrollView>
+
+    </RelativeLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmnav"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="-45dp"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/brown"
+        app:itemTextColor="@color/brown"
+        app:menu="@menu/menu_navigation" />
+</RelativeLayout>

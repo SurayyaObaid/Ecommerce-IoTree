@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".OrderActivity">
+    <ScrollView xmlns:tools="http://schemas.android.com/tools"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@drawable/bg_seven"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_baseline_home_24"
+                android:layout_margin="10dp"
+                android:id="@+id/linkToHome"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Order Confirmation"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="User Name"
+                android:layout_marginHorizontal="20dp"
+                android:id="@+id/orUserName"
+                android:background="@android:color/white"
+                android:padding="10dp"
+                android:inputType="textPersonName"
+                android:layout_marginVertical="5dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:layout_marginHorizontal="20dp"
+                android:id="@+id/orMobile"
+                android:background="@android:color/white"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:layout_marginVertical="5dp"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Address"
+                android:layout_marginHorizontal="20dp"
+                android:id="@+id/orAddress"
+                android:background="@android:color/white"
+                android:padding="10dp"
+                android:gravity="top"
+                android:layout_marginVertical="5dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/orderDetails"
+                android:padding="20dp"
+                android:layout_margin="20dp"
+                android:textColor="@android:color/black"
+                android:background="@android:color/white"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/orderSuccess"
+                android:text="Confirm Order"
+                android:background="@drawable/bg_color_btn"
+                android:textColor="@android:color/white"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/btmnav"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_gravity="bottom"
+    android:layout_marginTop="-45dp"
+    android:layout_alignParentBottom="true"
+    app:itemBackground="@android:color/white"
+    app:itemIconTint="@color/brown"
+    app:itemTextColor="@color/brown"
+    app:menu="@menu/menu_navigation" />
+</RelativeLayout>

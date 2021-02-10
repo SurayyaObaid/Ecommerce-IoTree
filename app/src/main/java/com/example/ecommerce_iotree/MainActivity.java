@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewResult;
     JSONPlaceHolderApi jsonPlaceHolderApi;
     EditText editEmail, editPassword;
-    Button loginbtn;
+    Button loginbtn, signup_link;
     String emailValue = "", passwordValue = "";
-    public static String sessionUser = "";
+    public static String sessionUser = "", sessionUserName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         textViewResult = findViewById(R.id.text_view_result);
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
+        signup_link = findViewById(R.id.signup_Link);
+        signup_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(MainActivity.this, Registration.class);
+                startActivity(in);
+            }
+        });
         loginbtn = findViewById(R.id.loginbtn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 emailValue = editEmail.getText().toString();
                 passwordValue = editPassword.getText().toString();
                 getUsers();
-                Intent in = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(in);
+
             }
         });
 
@@ -88,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
     }*/
     private void getUsers(){
-        if (editEmail.getText().toString() == "" || editPassword.getText().toString() == ""){
+        if (editEmail.getText().toString().matches("") || editPassword.getText().toString().matches("")){
             Toast.makeText(MainActivity.this,"Empty field(s), please fill the form",
                     Toast.LENGTH_SHORT).show();
         }
@@ -118,9 +125,17 @@ public class MainActivity extends AppCompatActivity {
                     content += "Email" + userModel.getEmail() + "\n";
                     content += "Password" + userModel.getPassword() + "\n";
 
-                    textViewResult.append(content);
+                    //textViewResult.append(content);
                     sessionUser = userModel.getUser_ID();
+                    sessionUserName = userModel.getUser_name();
                     userModel.setUser_ID(sessionUser);
+                    Intent in =new Intent(MainActivity.this,HomeActivity.class);
+                    String userName = userModel.getUser_name();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("UserName", userName);
+                    in.putExtras(bundle);
+                    //textViewResult.append(userName);
+                    startActivity(in);
                 }
 
 
