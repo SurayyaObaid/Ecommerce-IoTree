@@ -4,6 +4,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface JSONPlaceHolderApi {
@@ -26,9 +27,15 @@ public interface JSONPlaceHolderApi {
     Call<List<CartItemModel>> getUserCart(@Query("User_ID") String User_ID );
 
     @GET("plantprediction.php")
-    Call<List<Plant>> loadPrediction(@Query("Temperature") String Temperature );
+    Call<List<PredictionResultModel>> loadPrediction(@Query("Temperature") String Temperature );
 
     @GET("fetchGardener.php")
     Call<List<GardenerModel>> getGardener(@Query("gardenerService") String gardenerService );
+
+    @GET("fetchapprovedorders.php.php")
+    Call<List<ApprovedOrderModel>> getApprovedOrders(@Query("User_name") String User_name );
+
+    @GET("deletecartitem.php./{Item_ID}")
+    Call<Void> deleteCartItem(@Path("Item_ID") String Item_ID );
 
 }

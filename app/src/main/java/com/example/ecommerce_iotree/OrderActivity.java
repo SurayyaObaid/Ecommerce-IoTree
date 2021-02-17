@@ -58,10 +58,6 @@ public class OrderActivity extends AppCompatActivity {
     }
 
     private void confirmOrder() {
-        if(userName.getText().toString().matches("") || address.getText().toString().matches("") || numberText.matches("")  )
-        {
-            Toast.makeText(OrderActivity.this,"Empty Fields",Toast.LENGTH_LONG).show();
-        }
         String url = "http://hibabintetariq.stig.pk/confirmOrder.php";
         StringRequest sr = new StringRequest(1, url,
                 new com.android.volley.Response.Listener<String>() {

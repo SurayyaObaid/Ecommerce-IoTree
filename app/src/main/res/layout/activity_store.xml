@@ -584,7 +584,7 @@
                         <ImageView
                             android:id="@+id/image8"
                             android:layout_width="100dp"
-                            android:layout_height="116dp"
+                            android:layout_height="109dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/haworthia" />
 

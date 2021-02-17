@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_seven"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android" >
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="130dp"
+            android:paddingBottom="40dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content"
+            tools:context=".Maintenance.WaterGoals">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Set Reminders to Water Plant"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="20dp"
+                    android:padding="20dp"
+                    />
+                <!--<TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/waterReminderPicker"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="@color/brown"
+                    android:background="@color/brown"
+                    android:headerBackground="@color/brown"
+                    />-->
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Label"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:textSize="18sp"
+                    android:id="@+id/remindertitle"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel"
+                        android:background="@color/brown"
+                        android:textColor="@android:color/white"
+                        android:id="@+id/cancelReminder"
+                        android:layout_margin="10dp"
+                        android:padding="7dp"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add Reminder"
+                        android:background="@color/brown"
+                        android:textColor="@android:color/white"
+                        android:id="@+id/setReminder"
+                        android:layout_margin="10dp"
+                        android:padding="7dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btmnav"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:itemBackground="@android:color/white"
+        app:itemIconTint="@color/brown"
+        app:itemTextColor="@color/brown"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_navigation" />
+
+</RelativeLayout>

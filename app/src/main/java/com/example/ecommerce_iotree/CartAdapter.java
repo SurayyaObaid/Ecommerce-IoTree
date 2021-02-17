@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.example.ecommerce_iotree.JSONPlaceHolderApi.BASE_URL;
 
@@ -26,6 +32,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     private List<CartModel> cartModels;
     String jprice = "";
 
+    JSONPlaceHolderApi jsonPlaceHolderApi;
     public CartAdapter(Context context, List<CartModel> cartModels) {
         this.context = context;
         this.cartModels = cartModels;
@@ -128,6 +135,24 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
                 Log.d("order",uid +"\n"+ iid+"\n"+ iname+"\n"+ iprice+"\n"+ iquan+"\n"+ uname);
             }
         });
+        holder.deleteCartItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String itemID= cartModel.getItem_ID();
+                Call<Void> call = jsonPlaceHolderApi.deleteCartItem(itemID);
+                call.enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) {
+                       // Toast.makeText(CartAdapter.this,"Cart Item Deleted",Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) {
+
+                    }
+                });
+            }
+        });
     }
 
     @Override
@@ -138,6 +163,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public class CartViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
         Button proceedToPay;
+        ImageButton deleteCartItem;
         TextView itemName, itemPrice, itemQuantity, itemid;
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -147,6 +173,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             itemName = itemView.findViewById(R.id.iName);
             itemPrice = itemView.findViewById(R.id.iprice);
             itemQuantity = itemView.findViewById(R.id.iquantity);
+            deleteCartItem = itemView.findViewById(R.id.deleteCartItem);
 
         }
     }

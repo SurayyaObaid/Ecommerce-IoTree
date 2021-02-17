@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Name"
+        android:id="@+id/aoName"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="5dp"
+        android:padding="8dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Product Price"
+        android:id="@+id/aoPrice"
+        android:layout_marginHorizontal="20dp"
+        android:padding="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ordered Date"
+        android:id="@+id/aoOrderedDate"
+        android:layout_marginHorizontal="20dp"
+        android:padding="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Arrival"
+        android:id="@+id/aoExpectedArrival"
+        android:layout_marginHorizontal="20dp"
+        android:padding="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:id="@+id/aoAddress"
+        android:layout_marginHorizontal="20dp"
+        android:padding="5dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile"
+        android:id="@+id/aoMobile"
+        android:layout_marginHorizontal="20dp"
+        android:padding="5dp"
+        />
+
+</LinearLayout>

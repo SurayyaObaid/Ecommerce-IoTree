@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,13 +30,24 @@ public class GardenerActivity extends AppCompatActivity {
     CheckBox clearance, design, jet_washing, growth_prevention, lawn_mowing;
     String gardenerService = "", gName, gAddress, gPhone, gCharges, gid;
     Button requestGardenerBtn;
+    ImageButton linkToHome;
     BottomNavigationView btmnav;
     JSONPlaceHolderApi jsonPlaceHolderApi;
+    RadioGroup serviceRadio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gardener);
+        linkToHome = findViewById(R.id.GlinkToHome);
+        linkToHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(GardenerActivity.this,HomeActivity.class);
+                startActivity(in);
+                finish();
+            }
+        });
         btmnav = findViewById(R.id.btmnav);
         btmnav.setSelectedItemId(R.id.gardener);
         btmnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -54,7 +67,7 @@ public class GardenerActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.donationActivity:
-                        startActivity(new Intent(getApplicationContext(),DonationActivity.class));
+                        startActivity(new Intent(getApplicationContext(),DonationMain.class));
                         overridePendingTransition(0,0);
                         return true;
 

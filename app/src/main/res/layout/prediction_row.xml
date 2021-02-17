@@ -1,112 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:gravity="center"
+    android:paddingHorizontal="30dp"
+    android:paddingVertical="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/productlayout"
-       >
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/predict1"
+            android:id="@+id/predImage"
+            android:layout_margin="10dp"
+            />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
+            android:orientation="vertical"
             >
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_margin="15sp"
-                android:layout_gravity="center"
-                android:id="@+id/predimage"
-                android:src="@drawable/plant"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:hint="Cart Item Name"
-                    android:gravity="right"
-                    android:layout_gravity="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:id="@+id/predLName"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:hint="Product ID"
-                    android:id="@+id/predBname"
-                    />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="Price"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:hint="Price"
-                        android:gravity="center"
-                        android:id="@+id/predprice"
-                        android:layout_gravity="center"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:hint="Temperature Avg.:"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:hint="Price"
-                        android:gravity="center"
-                        android:id="@+id/predtemp"
-                        android:layout_gravity="center"
-                        />
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/viewMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/simple_radius"
-                    android:gravity="center"
-                    android:paddingHorizontal="30dp"
-                    android:text="View More"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/predictLName"
+            android:layout_margin="15dp"
+            android:textSize="25sp"
+            android:textColor="@color/brown"
+            android:hint="Plant L Name"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/predictBName"
+            android:layout_marginHorizontal="15dp"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:hint="Plant L Name"
+            />
         </LinearLayout>
-
     </LinearLayout>
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Favourable Parameter"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/predictTemperature"
+        android:hint="Temperature"
+        android:textSize="12sp"
+        android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Season"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/predflowering"
+            android:hint="Value"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Known Hazards"
+            android:textColor="@android:color/black"
+            android:textSize="12sp"/>
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:id="@+id/predHazards"
+            android:hint="Value"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View More"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_color_btn"
+        android:layout_marginVertical="10dp"
+        android:padding="5dp"
+        android:id="@+id/predViewMore"
+        />
+
+</LinearLayout>

@@ -1,10 +1,12 @@
 package com.example.ecommerce_iotree;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -42,10 +45,39 @@ public class ProductDescriptionActivity extends AppCompatActivity {
     String rprice, rname;
     Button addprotocart;
     String quantityText ="";
+    BottomNavigationView btmnav;
+    int resId=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_description);
+        btmnav= findViewById(R.id.btmnav);
+        btmnav.setSelectedItemId(R.id.shop);
+        btmnav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.predict:
+                        startActivity(new Intent(getApplicationContext(),PredictionActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.gardener:
+                        startActivity(new Intent(getApplicationContext(),GardenerActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.shop:
+                        startActivity(new Intent(getApplicationContext(),StoreActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.donationActivity:
+                        startActivity(new Intent(getApplicationContext(),DonationActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                }
+                return false;
+            }
+        });
         textView = findViewById(R.id.ProductDescriptionTV);
         image = findViewById(R.id.proimg);
         addprotocart = findViewById(R.id.addprotocart);
@@ -79,9 +111,8 @@ public class ProductDescriptionActivity extends AppCompatActivity {
         pid = desc.getString("Plant_ID");
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            int resId = bundle.getInt("image");
+            resId = bundle.getInt("image");
             image.setImageResource(resId);
-
         }
         getPlants();
     }
@@ -169,8 +200,6 @@ public class ProductDescriptionActivity extends AppCompatActivity {
                     content += "Habitat:\t" + plant.getHabitat() + "\n";
                     content += "Soil:\t" + plant.getSoil() + "\n" ;
                     MainActivity user = new MainActivity();
-                    content +="user id: " + user.sessionUser;
-                    content += "Maximum Temperature:\t" + plant.getTemperature() + "\n";
                     textView.append(content);
                     protitle.append(protitletext);
                     proPrice.append(proPriceText);

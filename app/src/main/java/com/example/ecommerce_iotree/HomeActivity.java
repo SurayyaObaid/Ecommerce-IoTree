@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i= new Intent(HomeActivity.this,DonationActivity.class);
+                Intent i= new Intent(HomeActivity.this,DonationMain.class);
                 startActivity(i);
             }
         });

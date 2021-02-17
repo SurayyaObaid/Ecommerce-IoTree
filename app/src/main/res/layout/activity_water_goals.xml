@@ -36,6 +36,8 @@
             android:id="@+id/waterReminderPicker"
             android:layout_margin="20dp"
             android:backgroundTint="@color/brown"
+            android:background="@color/brown"
+            android:headerBackground="@color/brown"
             />
         <EditText
             android:layout_width="match_parent"

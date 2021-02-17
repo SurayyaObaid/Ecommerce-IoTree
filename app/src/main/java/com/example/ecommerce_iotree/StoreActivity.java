@@ -44,7 +44,7 @@ public class StoreActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.donationActivity:
-                        startActivity(new Intent(getApplicationContext(),DonationActivity.class));
+                        startActivity(new Intent(getApplicationContext(),DonationMain.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -54,6 +54,13 @@ public class StoreActivity extends AppCompatActivity {
         });
         cartbtn = findViewById(R.id.cartbtn);
         topaybtn = findViewById(R.id.toPayButton);
+        topaybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(StoreActivity.this, DisplayOrderPlaced.class);
+                startActivity(in);
+            }
+        });
         profilebtn = findViewById(R.id.profilebtn);
 
         cartbtn.setOnClickListener(new View.OnClickListener() {

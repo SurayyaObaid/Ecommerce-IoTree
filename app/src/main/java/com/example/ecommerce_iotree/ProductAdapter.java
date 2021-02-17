@@ -35,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-       // Plant plantItem = plantList.get(position);
+        // Plant plantItem = plantList.get(position);
 
         holder.lnametxt.setText(plantList.get(position).getLocalName());
         holder.bnametxt.setText(plantList.get(position).getBotanicalName());

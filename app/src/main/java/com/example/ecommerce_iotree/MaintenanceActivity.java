@@ -47,7 +47,7 @@ public class MaintenanceActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.donationActivity:
-                        startActivity(new Intent(getApplicationContext(),DonationActivity.class));
+                        startActivity(new Intent(getApplicationContext(),DonationMain.class));
                         overridePendingTransition(0,0);
                         return true;
 

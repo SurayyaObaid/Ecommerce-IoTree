@@ -9,20 +9,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.ecommerce_iotree.Maintenance.PestGoals;
-import com.example.ecommerce_iotree.Maintenance.WaterGoals;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class SetGoalsActivity extends AppCompatActivity {
-    CardView cardW, cardP, cardF, cardS, cardSun;
+public class DonationMain extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
+    CardView campaigns, donations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_goals);
+        setContentView(R.layout.activity_donation_main);
         bottomNavigationView = findViewById(R.id.btmnav);
-        bottomNavigationView.setSelectedItemId(R.id.track);
+        bottomNavigationView.setSelectedItemId(R.id.donationActivity);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -40,7 +38,7 @@ public class SetGoalsActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.donationActivity:
-                        startActivity(new Intent(getApplicationContext(),DonationActivity.class));
+                        startActivity(new Intent(getApplicationContext(),DonationMain.class));
                         overridePendingTransition(0,0);
                         return true;
 
@@ -48,44 +46,19 @@ public class SetGoalsActivity extends AppCompatActivity {
                 return false;
             }
         });
-        cardW = findViewById(R.id.WaterGoals);
-        cardSun = findViewById(R.id.SunlightGoals);
-        cardP = findViewById(R.id.PesticideGoals);
-        cardF = findViewById(R.id.FertilizerGoals);
-        cardS = findViewById(R.id.SoilQGoals);
-
-        cardW.setOnClickListener(new View.OnClickListener() {
+        campaigns = findViewById(R.id.viewCampaigns);
+        donations = findViewById(R.id.donateNow);
+        campaigns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
+                Intent in = new Intent(DonationMain.this, Campaigns.class);
                 startActivity(in);
             }
         });
-        cardP.setOnClickListener(new View.OnClickListener() {
+        donations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
-                startActivity(in);
-            }
-        });
-        cardW.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
-                startActivity(in);
-            }
-        });
-        cardW.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
-                startActivity(in);
-            }
-        });
-        cardW.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
+                Intent in = new Intent(DonationMain.this, DonationActivity.class);
                 startActivity(in);
             }
         });

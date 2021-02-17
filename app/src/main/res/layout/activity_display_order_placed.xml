@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -10,16 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".CartActivity">
+        tools:context=".DisplayOrderPlaced">
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:paddingHorizontal="15dp"
-            android:layout_marginVertical="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/gardener_row_item"
-            android:id="@+id/gardenerRV">
+            tools:listitem="@layout/approved_order_row"
+            android:id="@+id/orderRV">
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 </ScrollView>

@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,9 +11,16 @@
     android:orientation="vertical"
     android:paddingTop="20dp"
     tools:context=".GardenerActivity">
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_home_24"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/GlinkToHome"
+        />
     <TextView
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:text="Request Gardener Services"
         android:gravity="center"
         android:layout_marginTop="10dp"
@@ -17,6 +28,7 @@
         android:backgroundTint="@color/colorPrimary"
         android:id="@+id/EditTextName"
         android:textStyle="bold|italic"
+        android:layout_gravity="center"
         android:textSize="20sp"
         />
     <TextView
@@ -30,6 +42,7 @@
         android:layout_marginLeft="20dp"
         android:textColor="#000000"
         />
+
 
     <CheckBox
         android:id="@+id/garden_clearance"
@@ -107,6 +120,8 @@
         android:layout_centerInParent="true"
         android:id="@+id/requestGardener"
         />
+
+</LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmnav"
         android:layout_width="match_parent"
@@ -115,6 +130,6 @@
         app:itemBackground="@android:color/white"
         app:itemIconTint="@color/brown"
         app:itemTextColor="@color/brown"
-        android:layout_marginTop="210dp"
+        android:layout_alignParentBottom="true"
         app:menu="@menu/menu_navigation" />
-</LinearLayout>
+</RelativeLayout>

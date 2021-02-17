@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -14,14 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrderSuccess"></activity>
+        <activity android:name=".Campaigns"></activity>
+        <activity android:name=".DonationMain" />
+        <activity android:name=".CreateMaintenanceReminder" />
+        <activity android:name=".DisplayOrderPlaced" />
+        <activity android:name=".OrderSuccess" />
         <activity android:name=".GardenerList" />
         <activity android:name=".UserProfileActivity" />
         <activity android:name=".PredictionResults" />
         <activity android:name=".Maintenance.PestGoals" />
         <activity android:name=".Maintenance.WaterGoals" />
         <activity android:name=".SetGoalsActivity" />
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".TestActivity" />
         <activity android:name=".Order" />
         <activity android:name=".Splash">
             <intent-filter>
@@ -43,6 +47,11 @@
         <activity android:name=".Registration" />
         <activity android:name=".DisplayPlant" />
         <activity android:name=".MainActivity" />
+
+        <receiver
+            android:name=".MaintenanceNotification"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>

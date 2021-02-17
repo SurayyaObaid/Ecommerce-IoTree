@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -26,7 +27,7 @@ public class PredictionResults extends AppCompatActivity {
     TextView tValue;
     String tempValue;
     JSONPlaceHolderApi jsonPlaceHolderApi;
-    RecyclerView recyclerView;
+    RecyclerView predictioRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +37,8 @@ public class PredictionResults extends AppCompatActivity {
         Bundle desc = getIntent().getExtras();
         tempValue = desc.getString("Temperature");
         //tValue.append(tempValue);
-        recyclerView = findViewById(R.id.predictionRecycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        predictioRecyclerView = findViewById(R.id.predictionRecycler);
+        predictioRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         loadPrediction();
     }
 
@@ -52,30 +53,31 @@ public class PredictionResults extends AppCompatActivity {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
         jsonPlaceHolderApi = retrofit.create(JSONPlaceHolderApi.class);
-        Call<List<Plant>> call = jsonPlaceHolderApi.loadPrediction(tempValue);
-        call.enqueue(new Callback<List<Plant>>() {
+        Call<List<PredictionResultModel>> call = jsonPlaceHolderApi.loadPrediction(tempValue);
+        call.enqueue(new Callback<List<PredictionResultModel>>() {
             @Override
-            public void onResponse(Call<List<Plant>> call, Response<List<Plant>> response) {
+            public void onResponse(Call<List<PredictionResultModel>> call, Response<List<PredictionResultModel>> response) {
                 if (!response.isSuccessful()) {
                     tValue.setText("response isn't received");
                     return;
                 }
-                List<Plant> plants = response.body();
-                for (Plant plant :plants) {
+                List<PredictionResultModel> predictionResultModels = response.body();
+                for (PredictionResultModel predictionResultModel :predictionResultModels) {
                     String content = "";
-                    content  += plant.getBotanicalName();
-                    content += plant.getLocalName();
-                    content += plant.getPricePKR().toString();
-                    content += "ID:\t" + plant.getPlantID() + "\n";
-                    content += "Flowering Time:\t" + plant.getFlowering_time() + "\n";
-                    content += "Family:\t" + plant.getFamily() + "\n";
-                    content += "Spread in meters:\t" + plant.getSpread_in_metres() + "\n";
-                    content += "Known Hazards:\t" + plant.getKnown_hazards() + "\n";
-                    content += "Habitat:\t" + plant.getHabitat() + "\n";
-                    content += "Soil:\t" + plant.getSoil() + "\n";
-                    //content += "Maximum Temperature:\t" + plant.getTemperature().toString() + "\n" + "\n" + "\n";
-                    tValue.append(content);
-                    //recyclerView.setAdapter(new PredictionAdapter(PredictionResults.this,plants));
+                    content  += predictionResultModel.getBotanicalName();
+                    content += predictionResultModel.getLocalName();
+                    content += predictionResultModel.getPricePKR().toString();
+                    content += "ID:\t" + predictionResultModel.getPlantID() + "\n";
+                    content += "Flowering Time:\t" + predictionResultModel.getFlowering_time() + "\n";
+                    content += "Family:\t" + predictionResultModel.getFamily() + "\n";
+                    content += "Spread in meters:\t" + predictionResultModel.getSpread_in_metres() + "\n";
+                    content += "Known Hazards:\t" + predictionResultModel.getKnown_hazards() + "\n";
+                    content += "Habitat:\t" + predictionResultModel.getHabitat() + "\n";
+                    content += "Soil:\t" + predictionResultModel.getSoil() + "\n";
+                    //content += "Maximum Temperature:\t" + predictionResultModel.getTemperature().toString() + "\n" + "\n" + "\n";
+                    //tValue.append(content);
+                    Log.d("prediction",content);
+                    predictioRecyclerView.setAdapter(new PredictionAdapter(PredictionResults.this,predictionResultModels));
 
                 }
 
@@ -83,7 +85,7 @@ public class PredictionResults extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Plant>> call, Throwable t) {
+            public void onFailure(Call<List<PredictionResultModel>> call, Throwable t) {
                 tValue.setText("Failed to get response");
             }
         });

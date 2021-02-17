@@ -174,7 +174,7 @@ public class DonationActivity extends AppCompatActivity implements AdapterView.O
 
 
 
-        String url = "http://hibabintetariq.stig.pk/insertDocation.php";
+        String url = "http://hibabintetariq.stig.pk/insertDonation.php";
         final StringRequest sr = new StringRequest(1, url,
                 new com.android.volley.Response.Listener<String>() {
                     @Override
