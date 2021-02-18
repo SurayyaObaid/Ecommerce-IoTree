@@ -13,7 +13,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DonationMain extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    CardView campaigns, donations;
+    CardView campaigns, donations, pastdonations;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,14 @@ public class DonationMain extends AppCompatActivity {
 
                 }
                 return false;
+            }
+        });
+        pastdonations = findViewById(R.id.pastDonations);
+        pastdonations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(DonationMain.this, DisplayDonations.class);
+                startActivity(in);
             }
         });
         campaigns = findViewById(R.id.viewCampaigns);

@@ -26,16 +26,19 @@ public interface JSONPlaceHolderApi {
     @GET("fetchcart.php")
     Call<List<CartItemModel>> getUserCart(@Query("User_ID") String User_ID );
 
+    @GET("fetchDonations.php")
+    Call<List<DonationModel>> getDonations(@Query("User_ID") String User_ID );
+
     @GET("plantprediction.php")
     Call<List<PredictionResultModel>> loadPrediction(@Query("Temperature") String Temperature );
 
     @GET("fetchGardener.php")
     Call<List<GardenerModel>> getGardener(@Query("gardenerService") String gardenerService );
 
-    @GET("fetchapprovedorders.php.php")
+    @GET("fetchapprovedorders.php")
     Call<List<ApprovedOrderModel>> getApprovedOrders(@Query("User_name") String User_name );
 
-    @GET("deletecartitem.php./{Item_ID}")
-    Call<Void> deleteCartItem(@Path("Item_ID") String Item_ID );
+    @GET("deletecartitem.php.")
+    Call<List<CartModel>> deleteCartItem(@Query("Item_ID") String Item_ID );
 
 }

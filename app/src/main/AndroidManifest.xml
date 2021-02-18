@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Campaigns"></activity>
+        <activity android:name=".DisplayDonations"></activity>
+        <activity android:name=".Campaigns" />
         <activity android:name=".DonationMain" />
         <activity android:name=".CreateMaintenanceReminder" />
         <activity android:name=".DisplayOrderPlaced" />

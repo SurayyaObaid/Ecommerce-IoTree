@@ -68,21 +68,21 @@ public class SetGoalsActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
-        cardW.setOnClickListener(new View.OnClickListener() {
+        cardSun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
                 startActivity(in);
             }
         });
-        cardW.setOnClickListener(new View.OnClickListener() {
+        cardF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);
                 startActivity(in);
             }
         });
-        cardW.setOnClickListener(new View.OnClickListener() {
+        cardS.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent in = new Intent(SetGoalsActivity.this, CreateMaintenanceReminder.class);

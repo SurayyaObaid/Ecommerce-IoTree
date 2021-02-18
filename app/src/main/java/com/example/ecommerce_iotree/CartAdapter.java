@@ -17,12 +17,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 import static com.example.ecommerce_iotree.JSONPlaceHolderApi.BASE_URL;
 
@@ -138,19 +142,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.deleteCartItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String itemID= cartModel.getItem_ID();
-                Call<Void> call = jsonPlaceHolderApi.deleteCartItem(itemID);
-                call.enqueue(new Callback<Void>() {
-                    @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
-                       // Toast.makeText(CartAdapter.this,"Cart Item Deleted",Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
-
-                    }
-                });
+                deleteCartItem();
             }
         });
     }
@@ -159,6 +151,47 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     public int getItemCount() {
         return cartModels.size();
     }
+    private void deleteCartItem(){
+        CartModel cartModel = new CartModel();
+        final String iid = cartModel.getItem_ID();
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://hibabintetariq.stig.pk/")
+                .addConverterFactory(GsonConverterFactory.create(gson))
+                .build();
+        jsonPlaceHolderApi = retrofit.create(JSONPlaceHolderApi.class);
+        final String uid= MainActivity.sessionUser;
+        Call<List<CartModel>> call = jsonPlaceHolderApi.deleteCartItem(iid);
+        call.enqueue(new Callback<List<CartModel>>() {
+            @Override
+            public void onResponse(Call<List<CartModel>> call, Response<List<CartModel>> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(context,"Something went wrong",Toast.LENGTH_LONG).show();
+                    Log.d("trouble deleting","truble deleting");
+                    return;
+                }
+                List<CartModel> cartModels = response.body();
+                for (CartModel cartModel :cartModels) {
+                    String content = "";
+                    Log.d("deleteitem",iid);
+
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<CartModel>> call, Throwable t) {
+                Toast.makeText(context,"Failed to get response",Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
 
     public class CartViewHolder extends RecyclerView.ViewHolder{
         ImageView imageView;
